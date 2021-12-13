@@ -9,10 +9,14 @@ function TamanhoAPP(){
 }
 TamanhoAPP()
 
+
 var cronometro = setInterval(function(){
     tempo -= 1
     if (tempo < 0){
-        window.location.href= 'vitoria.html'
+        clearInterval(cronometro)
+        clearInterval(criaMosquito)
+        alert('vitória')
+        //window.location.href= 'vitoria.html'
     }
     else{
     document.getElementById('cronometro').innerHTML = tempo
