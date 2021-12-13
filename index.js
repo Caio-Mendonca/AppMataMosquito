@@ -14,7 +14,7 @@ function Posicao(){
     document.getElementById('mosquito').remove()
         //Controle de vidas
         if(vidas > 3){
-            alert('Game Over')
+            window.location.href= 'game_over.html'
         }
         else{
         document.getElementById('vida' + vidas ).src="imagens/coracao_vazio.png"
