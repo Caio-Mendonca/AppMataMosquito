@@ -1,5 +1,6 @@
 var altura = 0
 var largura = 0
+var vidas = 1
 
 function TamanhoAPP(){
     altura = window.innerHeight
@@ -11,6 +12,14 @@ function Posicao(){
     //removendo elemento caso já exista
     if (document.getElementById('mosquito')){
     document.getElementById('mosquito').remove()
+        //Controle de vidas
+        if(vidas > 3){
+            alert('Game Over')
+        }
+        else{
+        document.getElementById('vida' + vidas ).src="imagens/coracao_vazio.png"
+        vidas++
+        }
     }
 
     var posicaoX = Math.floor(Math.random() * largura) - 90
@@ -18,8 +27,7 @@ function Posicao(){
 
     posicaoX = posicaoX < 0  ? 0 : posicaoX
     posicaoY = posicaoY < 0  ? 0 : posicaoY
-    console.log(posicaoX, posicaoY)
-
+   
     //criando elemento HTML
     var mosquito = document.createElement('img')
     mosquito.src = './imagens/mosca.png'
@@ -28,12 +36,13 @@ function Posicao(){
     mosquito.style.top = posicaoY +'px'
     mosquito.style.position = 'absolute'
     mosquito.id ='mosquito'
-
+    mosquito.onclick = function(){
+        this.remove()
+    }
 
     document.body.appendChild(mosquito)
 }
-
-
+//Função responsável pelo tamanho do mosquito
 function Classe(){
     var classe = Math.floor(Math.random() * 3)
 
@@ -46,7 +55,7 @@ function Classe(){
             return 'mosquito3'
     }
 }
-
+//Função responsável pelo lado que o mosquito está olhando
 function Lados(){
     var lado = Math.floor(Math.random() * 2)
 
