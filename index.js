@@ -1,12 +1,23 @@
 var altura = 0
 var largura = 0
 var vidas = 1
+var tempo = 10
 
 function TamanhoAPP(){
     altura = window.innerHeight
     largura = window.innerWidth
 }
 TamanhoAPP()
+
+var cronometro = setInterval(function(){
+    tempo -= 1
+    if (tempo < 0){
+        window.location.href= 'vitoria.html'
+    }
+    else{
+    document.getElementById('cronometro').innerHTML = tempo
+    }
+},1000)
 
 function Posicao(){
     //removendo elemento caso já exista
