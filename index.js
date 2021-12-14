@@ -1,15 +1,28 @@
 var altura = 0
 var largura = 0
 var vidas = 1
-var tempo = 10
+var tempo = 50
+var nivel = window.location.search
+var criaMosquitoTempo = 1500
+//Controle de níveis da aplicação 
+nivel = nivel.replace('?','')
+if (nivel === 'normal'){
+    criaMosquitoTempo = 1500
+}
+else if (nivel === 'dificil'){
+    criaMosquitoTempo = 1000
+}
+else if (nivel === 'chucknorris'){
+    criaMosquitoTempo = 750
+}
 
+// Função para leitura doo tamanho da tela atual
 function TamanhoAPP(){
     altura = window.innerHeight
     largura = window.innerWidth
 }
 TamanhoAPP()
-
-
+//Controle da cronometragem do APP
 var cronometro = setInterval(function(){
     tempo -= 1
     if (tempo < 0){
@@ -22,7 +35,7 @@ var cronometro = setInterval(function(){
     document.getElementById('cronometro').innerHTML = tempo
     }
 },1000)
-
+// Função que posiciona e cria os mosquitinhos na tela, também controla as vidas
 function Posicao(){
     //removendo elemento caso já exista
     if (document.getElementById('mosquito')){
