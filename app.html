@@ -14,22 +14,25 @@
 
 </head>
 <body onresize="TamanhoAPP()">
-    <div class="painel">
-        <div class="vidas">
-            <img id="vida1" src="./imagens/coracao_cheio.png">
-            <img id="vida2" src="./imagens/coracao_cheio.png">
-            <img id="vida3" src="./imagens/coracao_cheio.png">
-        </div>
-        <div class="cronometro">
-            Tempo restante:<span id="cronometro"></span>
+    <div  class="container mt-5 justify-content-center">
+        <div class="painel">
+            <div class="vidas">
+                <img id="vida1" src="./imagens/coracao_cheio.png">
+                <img id="vida2" src="./imagens/coracao_cheio.png">
+                <img id="vida3" src="./imagens/coracao_cheio.png">
+            </div>
+            <div class="cronometro">
+                Tempo restante:<span id="cronometro"></span>
 
+            </div>
         </div>
+        <!--Script que puxa a função cronometro e cria mosquitos-->
+        <script>
+            document.getElementById('cronometro').innerHTML = tempo
+
+        var criaMosquito = setInterval(function(){
+            Posicao()
+            }, criaMosquitoTempo)
+        </script>
     </div>
-    <script>
-        document.getElementById('cronometro').innerHTML = tempo
-
-       var criaMosquito = setInterval(function(){
-           Posicao()
-        }, criaMosquitoTempo)
-    </script>
 </body>
