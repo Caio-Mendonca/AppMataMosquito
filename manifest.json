@@ -6,6 +6,13 @@
   "orientation": "any",
   "scope": "/",
   "short_name": "Mata Mosquito ",
-  "start_url": "https://caio-mendonca.github.io/AppMataMosquito/",
-  "theme_color": "#ffffff"
+  "start_url": ".",
+  "theme_color": "#ffffff",
+  "icons":[
+    {
+      "src": "imagens/mosca.png",
+      "type" : "image/png",
+      "size": "512x512"
+    }
+  ]
 }
