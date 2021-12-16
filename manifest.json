@@ -2,10 +2,10 @@
   "background_color": "#ffffff",
   "dir": "ltr",
   "display": "standalone",
-  "name": "caio-mendonca.github",
+  "name": "APP Mata mosquito",
   "orientation": "any",
   "scope": "/",
-  "short_name": "caio-mendonca.github",
-  "start_url": "/",
+  "short_name": "Mata Mosquito ",
+  "start_url": "https://caio-mendonca.github.io/AppMataMosquito/",
   "theme_color": "#ffffff"
 }
